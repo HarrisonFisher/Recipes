@@ -1,0 +1,30 @@
+.breadcrumb {
+    font-size: 1.2em; /* Make the text larger */
+    display: flex;
+    justify-content: center; /* Center the breadcrumb items */
+    align-items: center; /* Vertically center the breadcrumb items */
+    text-align: center; /* Center the content */
+
+}
+
+
+.breadcrumb a {
+    text-decoration: underline; /* Add underline by default */
+    color: inherit; /* Inherit color from parent, so links have the same color as text */
+
+}
+
+.breadcrumb a:hover {
+    text-decoration: none; /* Remove underline on hover */
+}
+
+.breadcrumb span {
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+
+.breadcrumb span:not(:last-child)::after {
+    content: ' » '; /* Adjusted to include spaces */
+    white-space: pre; /* Preserve spaces */
+}
+

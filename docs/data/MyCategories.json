@@ -1,0 +1,489 @@
+{
+  "categories": [
+    {
+      "emoji": "⭐",
+      "name": "Favorites",
+      "thumbnail": "https://icon-library.com/images/favorite-icon/favorite-icon-14.jpg",
+      "subcategories": [
+        {
+          "name": "Ultra Favorites"
+        }
+      ]
+    },
+    {
+      "name": "Cuisine Types",
+      "emoji": "🌎",
+      "thumbnail": "https://www.shutterstock.com/image-vector/earth-globes-isolated-on-white-600nw-408406297.jpg",
+      "subcategories": [
+        {
+          "name": "Italian",
+          "emoji": "🇮🇹"
+        },
+        {
+          "name": "Mexican",
+          "emoji": "🇲🇽"
+        },
+        {
+          "name": "Chinese",
+          "emoji": "🇨🇳"
+        },
+        {
+          "name": "Indian",
+          "emoji": "🇮🇳"
+        },
+        {
+          "name": "French",
+          "emoji": "🇫🇷"
+        },
+        {
+          "name": "Thai",
+          "emoji": "🇹🇭"
+        },
+        {
+          "name": "Japanese",
+          "emoji": "🇯🇵"
+        },
+        {
+          "name": "Mediterranean"
+        },
+        {
+          "name": "American",
+          "emoji": "🇺🇸"
+        },
+        {
+          "name": "Greek",
+          "emoji": "🇬🇷"
+        },
+        {
+          "name": "Spanish",
+          "emoji": "🇪🇸"
+        },
+        {
+          "name": "Middle Eastern"
+        },
+        {
+          "name": "Korean",
+          "emoji": "🇰🇷"
+        },
+        {
+          "name": "Vietnamese",
+          "emoji": "🇻🇳"
+        },
+        {
+          "name": "Caribbean"
+        },
+        {
+          "name": "Brazilian",
+          "emoji": "🇧🇷"
+        },
+        {
+          "name": "British",
+          "emoji": "🇬🇧"
+        },
+        {
+          "name": "Irish",
+          "emoji": "🇮🇪"
+        },
+        {
+          "name": "German",
+          "emoji": "🇩🇪"
+        },
+        {
+          "name": "Australian",
+          "emoji": "🇦🇺"
+        },
+        {
+          "name": "Cajun/Creole"
+        },
+        {
+          "name": "Russian",
+          "emoji": "🇷🇺"
+        },
+        {
+          "name": "Scandinavian"
+        },
+        {
+          "name": "African"
+        },
+        {
+          "name": "Fusion"        }
+      ]
+    },
+    {
+      "name": "Meal Types",
+      "thumbnail": "../img/categories/Meal-Types.jpg",
+      "subcategories": [
+        {
+          "name": "Breakfast"
+        },
+        {
+          "name": "Brunch"
+        },
+        {
+          "name": "Lunch"
+        },
+        {
+          "name": "Dinner"
+        },
+        {
+          "name": "Appetizers"
+        },
+        {
+          "name": "Snacks"
+        },
+        {
+          "name": "Side Dishes"
+        },
+        {
+          "name": "Salads"
+        },
+        {
+          "name": "Soups"
+        },
+        {
+          "name": "Sandwiches"
+        },
+        {
+          "name": "Main Dishes"
+        },
+        {
+          "name": "Desserts",
+          "subcategories": []
+        },
+        {
+          "name": "Beverages",
+          "subcategories": [
+            {
+              "name": "Alcoholic"
+            },
+            {
+              "name": "Non-Alcoholic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dietary Preferences",
+      "thumbnail": "https://www.glutenfreealchemist.com/wp-content/uploads/2020/01/Vegan-GF-1.png",
+      "subcategories": [
+        {
+          "name": "Vegetarian"
+        },
+        {
+          "name": "Vegan"
+        },
+        {
+          "name": "Gluten-Free"
+        },
+        {
+          "name": "Dairy-Free"
+        },
+        {
+          "name": "Keto"
+        },
+        {
+          "name": "Paleo"
+        },
+        {
+          "name": "Low-Carb"
+        },
+        {
+          "name": "Low-Fat"
+        },
+        {
+          "name": "Nut-Free"
+        },
+        {
+          "name": "Soy-Free"
+        }
+      ]
+    },
+    {
+      "name": "Ingredients",
+      "thumbnail": "https://img.freepik.com/premium-vector/protein-products-meat-chicken-eggs-fish-seafood-healthy-eating-stock-vector-flat-cartoon_502320-856.jpg",
+      "subcategories": [
+        {
+          "name": "Chicken"
+        },
+        {
+          "name": "Beef"
+        },
+        {
+          "name": "Pork"
+        },
+        {
+          "name": "Seafood"
+        },
+        {
+          "name": "Vegetables"
+        },
+        {
+          "name": "Fruits"
+        },
+        {
+          "name": "Pasta"
+        },
+        {
+          "name": "Rice"
+        },
+        {
+          "name": "Beans/Legumes"
+        },
+        {
+          "name": "Tofu/Tempeh"
+        },
+        {
+          "name": "Eggs"
+        },
+        {
+          "name": "Cheese"
+        },
+        {
+          "name": "Nuts/Seeds"
+        },
+        {
+          "name": "Grains"
+        },
+        {
+          "name": "Herbs/Spices"
+        },
+        {
+          "name": "Condiments/Sauces"
+        }
+      ]
+    },
+    {
+      "name": "Occasions",
+      "emoji": "🎉",
+      "thumbnail": "https://media.istockphoto.com/id/1339034513/vector/confetti-and-serpentine-ribbons-vector-background-isolated-on-white-backdrop-explosion-burst.jpg?s=612x612&w=0&k=20&c=PAG5lIwHok80KkN-M4uCNEqCueaVKhIs_y9Kpoz03ng=",
+      "subcategories": [
+        {
+          "name": "Thanksgiving",
+          "emoji": "🦃"
+        },
+        {
+          "name": "Christmas",
+          "emoji": "🎄"
+        },
+        {
+          "name": "Easter",
+          "emoji": "🐰"
+        },
+        {
+          "name": "Halloween",
+          "emoji": "🎃"
+        },
+        {
+          "name": "Valentine's Day",
+          "emoji": "💗"
+        },
+        {
+          "name": "Fourth of July",
+          "emoji": "🦅"
+        },
+        {
+          "name": "Hanukkah",
+          "emoji": "🕎"
+        },
+        {
+          "name": "Ramadan",
+          "emoji": "🕋"
+        },
+        {
+          "name": "Diwali",
+          "emoji": "🪔"
+        },
+        {
+          "name": "New Year's Eve",
+          "emoji": "🎆"
+        },
+        {
+          "name": "Birthday Parties",
+          "emoji": "🎂"
+        },
+        {
+          "name": "BBQs",
+          "emoji": "🍖"
+        },
+        {
+          "name": "Picnics",
+          "emoji": "🥪"
+        },
+        {
+          "name": "Potlucks",
+          "emoji": "🍲"
+        }
+      ]
+    },
+    {
+      "name": "Cooking Methods",
+      "thumbnail": "../img/categories/Cooking-Methods.png",
+      "subcategories": [
+        {
+          "name": "Grilling"
+        },
+        {
+          "name": "Baking"
+        },
+        {
+          "name": "Frying"
+        },
+        {
+          "name": "Roasting"
+        },
+        {
+          "name": "Slow-Cooking"
+        },
+        {
+          "name": "Instant Pot/Pressure Cooking"
+        },
+        {
+          "name": "Stir-Frying"
+        },
+        {
+          "name": "Steaming"
+        },
+        {
+          "name": "Sous Vide"
+        },
+        {
+          "name": "Smoking"
+        },
+        {
+          "name": "Broiling"
+        },
+        {
+          "name": "Boiling"
+        },
+        {
+          "name": "Sauteing"
+        }
+      ]
+    },
+    {
+      "name": "Difficulty Level",
+      "thumbnail": "https://i0.wp.com/www.instant-danse.fr/wp-content/uploads/2018/09/iStock-688948172.jpg",
+      "subcategories": [
+        {
+          "name": "Easy"        },
+        {
+          "name": "Intermediate"
+        },
+        {
+          "name": "Advanced"
+        }
+      ]
+    },
+    {
+      "name": "Quick Meals",
+      "emoji": "🏃",
+      "thumbnail": "https://img.freepik.com/premium-vector/stopwatch-icon-with-fire-flat-yellow-fire-stopwatch-timer-with-fire-vector-icon_399089-8505.jpg"
+    },
+    {
+      "name": "One-Pot Meals",
+      "emoji": "🍲",
+      "thumbnail": "https://img.freepik.com/premium-vector/cooking-kitchen-pot-vector-illustration-cooking-pan-icon_473272-208.jpg?size=626&ext=jpg&ga=GA1.1.1395880969.1711584000&semt=ais"
+    },
+    {
+      "name": "Healthy Choices",
+      "thumbnail": "https://o.quizlet.com/PizUdRLqvQTipKzIpQqtaQ.png",
+      "subcategories": [
+        {
+          "name": "Low-Calorie"
+        },
+        {
+          "name": "High-Protein"
+        },
+        {
+          "name": "Heart-Healthy"
+        },
+        {
+          "name": "Whole30"
+        },
+        {
+          "name": "Clean Eating"
+        },
+        {
+          "name": "Weight Loss Friendly"
+        },
+        {
+          "name": "Balanced Meals"
+        }
+      ]
+    },
+    {
+      "name": "Seasonal",
+      "thumbnail": "https://www.elephango.com/images/series/seasons.png",
+      "subcategories": [
+        {
+          "name": "Summer"
+        },
+        {
+          "name": "Fall/Autumn"
+        },
+        {
+          "name": "Winter"
+        },
+        {
+          "name": "Spring"
+        }
+      ]
+    },
+    {
+      "name": "Regional Specialties",
+      "thumbnail": "https://ecdn.teacherspayteachers.com/thumbitem/Regional-Foods-of-the-United-States-PPT-2550447-1500873467/original-2550447-1.jpg",
+      "subcategories": [
+        {
+          "name": "Tex-Mex"
+        },
+        {
+          "name": "Southern Comfort"
+        },
+        {
+          "name": "Northeastern Delights"
+        },
+        {
+          "name": "Pacific Northwest"
+        },
+        {
+          "name": "Southwest"
+        },
+        {
+          "name": "Midwest"
+        },
+        {
+          "name": "Northeast"
+        },
+        {
+          "name": "Southeast"
+        },
+        {
+          "name": "West Coast"
+        },
+        {
+          "name": "New England"
+        },
+        {
+          "name": "Deep South"
+        },
+        {
+          "name": "Appalachia"
+        },
+        {
+          "name": "Gulf Coast"
+        },
+        {
+          "name": "Rocky Mountain"
+        },
+        {
+          "name": "Hawaiian"
+        },
+        {
+          "name": "Alaskan"
+        }
+      ]
+    }
+  ],
+  "recipes": []
+}

@@ -1,0 +1,39 @@
+
+.cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Align items at the start and end of the container */
+    padding: 30px; /* Reduced padding for a more compact appearance */
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cell img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 20px; /* Increased space between image and text */
+}
+
+
+.cell .text-content {
+    margin-top: 20px; /* Increased space between image and text */
+    text-align: center;
+}
+
+.cell a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,130 @@
+{
+  "categories": [],
+  "recipes": [
+    {
+      "name": "Spaghetti with Tomato Sauce",
+      "description": "This classic recipe is easy to make and delicious!",
+      "servings": 4,
+      "emoji": "🍝",
+      "ingredients": [
+        { "amount": 16, "unit": "oz", "ingredient": "spaghetti" },
+        { "amount": 14, "unit": "oz", "ingredient": "crushed tomatoes" },
+        { "amount": 3, "unit": "cloves", "ingredient": "garlic, minced" },
+        { "amount": 2, "unit": "tablespoons", "ingredient": "olive oil" },
+        { "ingredient": "salt and pepper, to taste" },
+        { "ingredient": "grated Parmesan cheese (optional)" }
+      ],
+      "directions": [
+        "Bring a large pot of salted water to a boil. Add the spaghetti and cook until al dente, according to package instructions.",
+        "Meanwhile, heat the olive oil in a large saucepan over medium heat. Add the minced garlic and sauté for about 1 minute, until fragrant.",
+        "Add the crushed tomatoes to the saucepan and stir to combine. Season with salt and pepper, to taste.",
+        "Simmer the tomato sauce for about 10 minutes, until slightly thickened.",
+        "Drain the cooked spaghetti and add it to the tomato sauce. Toss to coat the spaghetti evenly with the sauce.",
+        "Serve the spaghetti hot, topped with grated Parmesan cheese, if desired."
+      ],
+      "categories": [
+        ["Favorites"],
+        ["Cuisine Types", "Italian"],
+        ["Meal Types", "Dinner"],
+        ["Meal Types", "Main Dishes"],
+        ["Ingredients", "Pasta"],
+        ["Ingredients", "Vegetables"],
+        ["Ingredients", "Herbs/Spices"],
+        ["Ingredients", "Condiments/Sauces"]
+      ]
+    },
+    {
+      "name": "Magic Cookie Bar",
+      "description": "Grandma's Recipe",
+      "servings": 35,
+      "ingredients": [
+        { "amount": 0.5, "unit": "cup", "ingredient": "margarine or butter" },
+        { "amount": 1.5, "unit": "cups", "ingredient": "graham cracker crumbs" },
+        { "amount": 14, "unit": "oz", "ingredient": "sweetened condensed milk" },
+        { "amount": 1.333, "unit": "cups", "ingredient": "flaked coconut" },
+        { "amount": 1, "unit": "cup", "ingredient": "chopped nuts" }
+      ],
+      "directions": [
+        "Preheat oven to 350°F (325°F for glass dish). In a 13\" x 9\" baking pan, melt butter in oven.",
+        "Sprinkle crumbs over butter; pour sweetened condensed milk evenly over crumbs.",
+        "Top evenly with remaining ingredients; press down firmly. Bake for 25 to 30 minutes.",
+        "Cool and chill thoroughly if desired. Cut into bars. Store loosely covered at room temperature."
+      ],
+      "categories": [
+        ["Favorites"],
+        ["Meal Types", "Desserts"],
+        ["Meal Types", "Snacks"],
+        ["Ingredients", "Nuts/Seeds"],
+        ["Ingredients", "Condiments/Sauces"],
+        ["Dietary Preferences", "Vegetarian"]
+      ]
+    },
+    {
+      "name": "Shrimp Creole",
+      "description": "Grandma's Recipe",
+      "servings": 6,
+      "ingredients": [
+        { "amount": 0.25, "unit": "cup", "ingredient": "olive oil and shortening" },
+        { "amount": 0.25, "unit": "cup", "ingredient": "flour" },
+        { "amount": 4, "unit": "cloves", "ingredient": "garlic, minced" },
+        { "amount": 0.5, "unit": "cup", "ingredient": "chopped celery" },
+        { "amount": 0.5, "unit": "cup", "ingredient": "chopped green peppers" },
+        { "amount": 16, "unit": "oz", "ingredient": "tomato sauce" },
+        { "amount": 0.5, "unit": "teaspoon", "ingredient": "black pepper" },
+        { "amount": 0.5, "unit": "teaspoon", "ingredient": "red pepper" },
+        { "amount": 0.75, "unit": "teaspoon", "ingredient": "salt" },
+        { "amount": 24, "unit": "oz", "ingredient": "raw shrimp, shelled and deveined, fresh or frozen" }
+      ],
+      "directions": [
+        "Heat oil, add flour, shrimp.",
+        "Add garlic, celery, green peppers. Add tomato sauce and seasonings. Cook for 20 minutes, stirring frequently.",
+        "Add shrimp and cook for an additional 15-25 minutes.",
+        "Serve over hot rice."
+      ],
+      "categories": [
+        ["Favorites"],
+        ["Cuisine Types", "Cajun/Creole"],
+        ["Meal Types", "Dinner"],
+        ["Meal Types", "Main Dishes"],
+        ["Ingredients", "Seafood"],
+        ["Ingredients", "Vegetables"],
+        ["Ingredients", "Herbs/Spices"],
+        ["Ingredients", "Condiments/Sauces"]
+      ]
+    },
+    {
+      "name": "Chili",
+      "description": "Grandma's Recipe",
+      "servings": 15,
+      "thumbnail": "https://www.browneyedbaker.com/wp-content/uploads/2021/08/ground-beef-chili-8-square.jpg",
+      "ingredients": [
+        { "amount": 1.5, "unit": "lb", "ingredient": "very lean hamburger" },
+        { "amount": 2, "unit": "large", "ingredient": "onions" },
+        { "amount": 40, "unit": "oz", "ingredient": "kidney beans" },
+        { "amount": 28, "unit": "oz", "ingredient": "whole peeled tomatoes" },
+        { "amount": 2, "unit": "tablespoons", "ingredient": "chili powder" },
+        { "amount": 0.25, "unit": "teaspoon", "ingredient": "black pepper" },
+        { "amount": 0.75, "unit": "teaspoon", "ingredient": "salt" },
+        { "amount": 0.125, "unit": "teaspoon", "ingredient": "red pepper" }
+      ],
+      "directions": [
+        "Brown hamburger with chopped onions (should be crumbly).",
+        "Mix tomatoes, beans, and seasonings in a large pot. Heat.",
+        "After hamburger mix is browned, add to bean mixture. Simmer until thickened.",
+        "Taste and add more seasoning if desired."
+      ],
+      "categories": [
+        ["Favorites"],
+        ["Cuisine Types", "American"],
+        ["Meal Types", "Dinner"],
+        ["Meal Types", "Main Dishes"],
+        ["Ingredients", "Beef"],
+        ["Ingredients", "Vegetables"],
+        ["Ingredients", "Herbs/Spices"],
+        ["Ingredients", "Beans/Legumes"],
+        ["Ingredients", "Condiments/Sauces"]
+      ]
+    }    
+  ]
+}
+  

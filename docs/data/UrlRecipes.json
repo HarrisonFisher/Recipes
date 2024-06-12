@@ -1,0 +1,25 @@
+{
+    "categories": [],
+    "recipes": [
+        {
+            "name": "HERSHEY’S “Perfectly Chocolate” Chocolate Cake",
+            "thumbnail": "https://www.hersheyland.com/content/dam/hersheyland/en-us/recipes/recipe-images/2_Hersheys_Perfectly_Chocolate_Cake_11-18.jpeg?im=Resize=(1024)",
+            "url": "https://www.hersheyland.com/recipes/hersheys-perfectly-chocolate-chocolate-cake.html",
+            "categories": [
+              ["Favorites"],
+              ["Meal Types", "Desserts"],
+              ["Occasions", "Birthday Parties"]
+            ]
+        },
+        {
+            "name": "“Perfectly Chocolate” Chocolate Frosting",
+            "thumbnail": "https://www.hersheyland.com/content/dam/hersheyland/en-us/recipes/recipe-images/1-perfectly-chocolate-chocolate-frosting.jpg?im=Resize=(1024)",
+            "url": "https://www.hersheyland.com/recipes/perfectly-chocolate-chocolate-frosting.html",
+            "categories": [
+              ["Favorites"],
+              ["Meal Types", "Desserts"],
+              ["Occasions", "Birthday Parties"]
+            ]
+        }
+    ]
+}

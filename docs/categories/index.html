@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    
+    <script>
+        var version = new Date().getTime();
+        
+        document.write('<link rel="stylesheet" href="'+ '../css/styles.css'     + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '../css/topbar.css'     + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '../css/breadcrumb.css' + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ 'css/grid-container.css'+ '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ 'css/cell.css'          + '?v=' + version + '">');
+        
+        document.write('<script src="'+ '../js/include.js'                      + '?v=' + version + '"><\/script>');
+        document.write('<script src="'+ 'js/categories.js'                      + '?v=' + version + '"><\/script>');
+    </script>
+    
+</head>
+<body>
+
+
+    <!-- Include the top bar -->
+    <div class="include topbar" src="../include/topbar.html"></div>
+
+    <!-- Main content area -->
+    <div class = "content">
+        <h3></h3>
+        <h3 id="breadcrumbs" class="breadcrumb" aria-label="breadcrumb"></h3>
+        <h1 id="recipe-title" >Categories</h1>
+        <div class="grid-container" id="categories-container"></div>
+    </div>
+    
+</body>
+</html>
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <!-- <link rel="stylesheet" href="../css/styles.css?v=1">
+    <link rel="stylesheet" href="../css/topbar.css?v=0"> -->
+
+    <script>
+        var version = new Date().getTime();
+        document.write('<link rel="stylesheet" href="'+ '../css/styles.css'         + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '../css/topbar.css'         + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ 'css/recipes.css'           + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '../css/rounded.css'        + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '../css/breadcrumb.css'     + '?v=' + version + '">');
+
+        document.write('<script src="' + '../js/include.js'                         + '?v=' + version + '"><\/script>');
+        document.write('<script src="' + 'js/recipe-display.js'                     + '?v=' + version + '"><\/script>');
+
+    </script>
+</head>
+<body>
+
+    <!-- Include the top bar -->
+    <div class="include topbar" src="../include/topbar.html"></div>
+
+    <!-- Main content area -->
+    <div class="content" id="content">
+        <h3></h3>
+        <h3 id="breadcrumbs" class="breadcrumb" aria-label="breadcrumb"></h3>
+        <h1 id="recipe-name"></h1>
+        <p id="recipe-description"></p>
+        <p id="recipe-servings"></p>
+        <img id="recipe-thumbnail" style="width: 200; height: 200px;"></img> 
+        <h2>Ingredients</h2>
+        <table class="rounded" id="recipe-ingredients">
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>Unit</th>
+                    <th>Ingredient</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ingredients will be filled dynamically here -->
+            </tbody>
+        </table>
+        <h2>Directions</h2>
+        <ol id="recipe-directions">
+            <!-- Directions will be filled dynamically here -->
+        </ol>
+    </div>
+
+</body>
+</html>
