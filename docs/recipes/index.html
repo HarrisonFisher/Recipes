@@ -18,8 +18,6 @@
         document.write('<script src="' + '../js/include.js'                         + '?v=' + version + '"><\/script>');
         document.write('<script src="'+ '../js/navbar.js'                           + '?v=' + version + '"><\/script>');
         document.write('<script src="' + 'js/recipe-display.js'                     + '?v=' + version + '"><\/script>');
-
-
     </script>
 </head>
 <body>
@@ -33,9 +31,9 @@
         <h3 id="breadcrumbs" class="breadcrumb" aria-label="breadcrumb"></h3>
         <h1 id="recipe-name"></h1>
         <p id="recipe-description"></p>
-        <p id="recipe-servings"></p>
         <img id="recipe-thumbnail" style="width: 200; height: 200px;"></img> 
         <h2>Ingredients</h2>
+        <p> Servings: <input type="number" id="recipe-servings" min="1" onchange="updateFractionText()"> </p>
         <table class="rounded" id="recipe-ingredients">
             <thead>
                 <tr>

@@ -79,14 +79,19 @@ async function renderRecipe(recipeName, containerId) {
 
         // Fill in the data dynamically
         document.getElementById('recipe-name').textContent = recipe.name;
+        
         document.getElementById('recipe-description').textContent = recipe.description;
-        document.getElementById('recipe-servings').textContent = `Servings: ${recipe.servings}`;
+        
+        document.getElementById('recipe-servings').value = recipe.servings;
+        document.getElementById('recipe-servings').min = recipe.servings;
+        document.getElementById('recipe-servings').setAttribute('data-servings', recipe.servings);
+
 
         const ingredientsTableBody = document.querySelector('#recipe-ingredients tbody');
         recipe.ingredients.forEach(ingredient => {
             const row = ingredientsTableBody.insertRow();
             row.innerHTML = `
-                <td>${toFraction(ingredient.amount)}</td>
+                <td data-amount="${ingredient.amount}">${ingredient.amount}</td>
                 <td>${ingredient.unit || ''}</td>
                 <td>${ingredient.ingredient}</td>
             `;
@@ -99,25 +104,21 @@ async function renderRecipe(recipeName, containerId) {
             directionsList.appendChild(listItem);
         });
 
-
-        const default_thumbnail = '../img/default-thumbnail.jpg'
+        const default_thumbnail = '../img/default-thumbnail.jpg';
         function getEmojiImageUrl(emojiCode) {
-            // Convert each character of the emoji code to hexadecimal values separated by dashes
             const emojiHexCodes = Array.from(emojiCode)
                 .map(char => char.codePointAt(0).toString(16))
                 .join('-');
-        
-            // Construct the URL for fetching emoji images from Twemoji's GitHub repository
             const twemojiBaseUrl = 'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/';
             const imageUrl = `${twemojiBaseUrl}${emojiHexCodes}.png`;
-        
             return imageUrl;
         }
+        
         var recipe_thumbnail = document.getElementById('recipe-thumbnail');
         if (recipe.emoji) {
-            recipe_thumbnail.src = getEmojiImageUrl(recipe.emoji)
+            recipe_thumbnail.src = getEmojiImageUrl(recipe.emoji);
         } else {
-            recipe_thumbnail.src = recipe.thumbnail ||default_thumbnail ; // Use default if thumbnail is not provided
+            recipe_thumbnail.src = recipe.thumbnail || default_thumbnail;
             recipe_thumbnail.alt = 'Thumbnail';
         }
 
@@ -126,8 +127,6 @@ async function renderRecipe(recipeName, containerId) {
         contentContainer.innerHTML = 'An error occurred';
     }
 }
-
-
 
 function createBreadcrumbLink(name, url, isLast) {
     const span = document.createElement('span');
@@ -147,13 +146,11 @@ function createBreadcrumbs(categoryPath, recipeName) {
     breadcrumbContainer.innerHTML = ''; // Clear any existing breadcrumbs
 
     // Add "Home" link
-    const homeLink = createBreadcrumbLink('Home', '../', false);
+    const homeLink = createBreadcrumbLink('Home', '../home', false);
     breadcrumbContainer.appendChild(homeLink);
 
-   
-
     if (categoryPath) {
-         // Add "Categories" link
+        // Add "Categories" link
         const categoriesLink = createBreadcrumbLink('Categories', '../categories', false);
         breadcrumbContainer.appendChild(categoriesLink);
 
@@ -177,6 +174,26 @@ function createBreadcrumbs(categoryPath, recipeName) {
     }
 }
 
+function updateFractionText() {
+    const fractionElements = document.querySelectorAll('[data-amount]');
+    fractionElements.forEach(element => {
+        const dataAmount = element.getAttribute('data-amount');
+        if (dataAmount === undefined || dataAmount === 'undefined') {
+            element.textContent = '';
+        } else {
+            const originalAmount = parseFloat(dataAmount);
+            const currentServings = parseFloat(document.getElementById('recipe-servings').value);
+            const originalServings = parseFloat(document.getElementById('recipe-servings').getAttribute('data-servings'));
+            
+            const adjustedAmount = (originalAmount / originalServings) * currentServings;
+            
+            element.textContent = toFraction(adjustedAmount);
+        }
+    });
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const recipeName = urlParams.get('recipe');
@@ -186,20 +203,37 @@ document.addEventListener('DOMContentLoaded', () => {
     var data = sessionStorage.getItem(recipeName);
     if (data) {
         try {
-            // Parse the data if it's JSON
             const parsedData = JSON.parse(data);
-            // If it's an array and contains only one element, extract that element
             if (Array.isArray(parsedData) && parsedData.length === 1) {
-                createBreadcrumbs(parsedData[0],recipeName);
+                createBreadcrumbs(parsedData[0], recipeName);
             } else {
-                createBreadcrumbs(null,recipeName);
+                createBreadcrumbs(null, recipeName);
             }
         } catch (error) {
             console.error('Error parsing JSON from sessionStorage:', error);
         }
     } else {
-        createBreadcrumbs(null,recipeName);
-        // const breadcrumbContainer = document.getElementById('breadcrumbs');
-        // breadcrumbContainer.appendChild(document.createTextNode('\u200B'));
+        createBreadcrumbs(null, recipeName);
     }
+
+    // Initial update of fraction text
+    updateFractionText();
+
+    // MutationObserver to watch for changes in the #recipe-ingredients table
+    const ingredientsTable = document.getElementById('recipe-ingredients');
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.type === 'childList' || mutation.type === 'attributes') {
+                updateFractionText();
+            }
+        });
+    });
+
+    // Configure the observer to watch for child nodes and attribute changes
+    observer.observe(ingredientsTable, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['data-amount']
+    });
 });
