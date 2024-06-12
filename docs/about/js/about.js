@@ -18,7 +18,7 @@ function createBreadcrumbs() {
     breadcrumbContainer.innerHTML = ''; // Clear any existing breadcrumbs
 
     // Add "Home" link
-    const homeLink = createBreadcrumbLink('Home', '../home', false);
+    const homeLink = createBreadcrumbLink('Home', '../', false);
     breadcrumbContainer.appendChild(homeLink);
 
     // Add breadcrumb for About page

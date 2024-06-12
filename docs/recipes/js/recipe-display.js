@@ -147,7 +147,7 @@ function createBreadcrumbs(categoryPath, recipeName) {
     breadcrumbContainer.innerHTML = ''; // Clear any existing breadcrumbs
 
     // Add "Home" link
-    const homeLink = createBreadcrumbLink('Home', '../home', false);
+    const homeLink = createBreadcrumbLink('Home', '../', false);
     breadcrumbContainer.appendChild(homeLink);
 
    

@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="refresh" content="0; url=categories"> -->
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <script>
+        var version = new Date().getTime();
+
+        document.write('<link rel="stylesheet" href="'+ 'css/styles.css'    + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ 'css/topbar.css'    + '?v=' + version + '">');
+        
+        document.write('<script src="'+ 'js/include.js'                     + '?v=' + version + '"><\/script>');
+        document.write('<script src="'+ 'js/navbar.js'                      + '?v=' + version + '"><\/script>');
+    </script>
+
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="home">link to home</a>.</p>
+
+    <!-- Include the top bar -->    
+    <div class="include topbar navbar" src="../include/topbar.html" data-prefix=""></div>
+
+    <!-- Main content area -->
+    <div class="content">
+        <h3></h3>
+        <h3>&#x200B;</h3>
+        <h1>Some of my favorite recipes</h1>
+        <img class="recipe-image" src="../img/Book.jpg" alt="Favorite Recipes">
+    </div>
+
 </body>
 </html>
-
 

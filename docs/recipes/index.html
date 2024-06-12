@@ -16,14 +16,16 @@
         document.write('<link rel="stylesheet" href="'+ '../css/breadcrumb.css'     + '?v=' + version + '">');
 
         document.write('<script src="' + '../js/include.js'                         + '?v=' + version + '"><\/script>');
+        document.write('<script src="'+ '../js/navbar.js'                           + '?v=' + version + '"><\/script>');
         document.write('<script src="' + 'js/recipe-display.js'                     + '?v=' + version + '"><\/script>');
+
 
     </script>
 </head>
 <body>
 
     <!-- Include the top bar -->
-    <div class="include topbar" src="../include/topbar.html"></div>
+    <div class="include topbar navbar" src="../include/topbar.html" data-prefix="../"></div>
 
     <!-- Main content area -->
     <div class="content" id="content">
