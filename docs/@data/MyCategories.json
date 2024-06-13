@@ -111,7 +111,7 @@
     },
     {
       "name": "Meal Types",
-      "thumbnail": "../img/categories/Meal-Types.jpg",
+      "thumbnail": "../@img/categories/Meal-Types.jpg",
       "subcategories": [
         {
           "name": "Breakfast"
@@ -318,7 +318,7 @@
     },
     {
       "name": "Cooking Methods",
-      "thumbnail": "../img/categories/Cooking-Methods.png",
+      "thumbnail": "../@img/categories/Cooking-Methods.png",
       "subcategories": [
         {
           "name": "Grilling"

@@ -1,7 +1,7 @@
 async function fetchAllJsonFiles() {
-    const response = await fetch(`../data/index.json?nocache=${new Date().getTime()}`);
+    const response = await fetch(`../@data/index.json?nocache=${new Date().getTime()}`);
     const { files } = await response.json();
-    const fetchPromises = files.map(fileName => fetch(`../data/${fileName}?nocache=${new Date().getTime()}`).then(res => res.json()));
+    const fetchPromises = files.map(fileName => fetch(`../@data/${fileName}?nocache=${new Date().getTime()}`).then(res => res.json()));
     return Promise.all(fetchPromises);
 }
 
@@ -104,7 +104,7 @@ async function renderRecipe(recipeName, containerId) {
             directionsList.appendChild(listItem);
         });
 
-        const default_thumbnail = '../img/default-thumbnail.jpg';
+        const default_thumbnail = '../@img/default-thumbnail.jpg';
         function getEmojiImageUrl(emojiCode) {
             const emojiHexCodes = Array.from(emojiCode)
                 .map(char => char.codePointAt(0).toString(16))
@@ -146,7 +146,7 @@ function createBreadcrumbs(categoryPath, recipeName) {
     breadcrumbContainer.innerHTML = ''; // Clear any existing breadcrumbs
 
     // Add "Home" link
-    const homeLink = createBreadcrumbLink('Home', '../home', false);
+    const homeLink = createBreadcrumbLink('Home', '../', false);
     breadcrumbContainer.appendChild(homeLink);
 
     if (categoryPath) {

@@ -1,10 +1,9 @@
 async function fetchAllJsonFiles() {
-    const response = await fetch(`../data/index.json?nocache=${new Date().getTime()}`);
+    const response = await fetch(`../@data/index.json?nocache=${new Date().getTime()}`);
     const { files } = await response.json();
-    const fetchPromises = files.map(fileName => fetch(`../data/${fileName}?nocache=${new Date().getTime()}`).then(res => res.json()));
+    const fetchPromises = files.map(fileName => fetch(`../@data/${fileName}?nocache=${new Date().getTime()}`).then(res => res.json()));
     return Promise.all(fetchPromises);
 }
-
 
 async function fetchAllCategories() {
     const jsonFiles = await fetchAllJsonFiles();
@@ -115,7 +114,7 @@ function display(categoriesToDisplay, recipesToDisplay,paths) {
     // Parse existing query parameters
     const params = new URLSearchParams(window.location.search);
 
-    const default_thumbnail = '../img/default-thumbnail.jpg'
+    const default_thumbnail = '../@img/default-thumbnail.jpg'
 
     function getEmojiImageUrl(emojiCode) {
         // Convert each character of the emoji code to hexadecimal values separated by dashes

@@ -8,15 +8,16 @@
     <script>
         var version = new Date().getTime();
         
-        document.write('<link rel="stylesheet" href="'+ '../css/styles.css'     + '?v=' + version + '">');
-        document.write('<link rel="stylesheet" href="'+ '../css/topbar.css'     + '?v=' + version + '">');
-        document.write('<link rel="stylesheet" href="'+ '../css/breadcrumb.css' + '?v=' + version + '">');
-        document.write('<link rel="stylesheet" href="'+ 'css/grid-container.css'+ '?v=' + version + '">');
-        document.write('<link rel="stylesheet" href="'+ 'css/cell.css'          + '?v=' + version + '">');
-        
-        document.write('<script src="'+ '../js/include.js'                      + '?v=' + version + '"><\/script>');
-        document.write('<script src="'+ '../js/navbar.js'                       + '?v=' + version + '"><\/script>');
-        document.write('<script src="'+ 'js/categories.js'                      + '?v=' + version + '"><\/script>');
+        document.write('<link rel="stylesheet" href="'+ '../@css/styles.css'     + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '../@css/topbar.css'     + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '../@css/breadcrumb.css' + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '../@css/nav.css'        + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '@css/grid-container.css'+ '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '@css/cell.css'          + '?v=' + version + '">');
+
+        document.write('<script src="'+ '../@js/include.js'                  + '?v=' + version + '"><\/script>');
+        document.write('<script src="'+ '../@js/nav.js'                      + '?v=' + version + '"><\/script>');
+        document.write('<script src="'+ '@js/categories.js'                  + '?v=' + version + '"><\/script>');
     </script>
     
 </head>
@@ -24,7 +25,27 @@
 
 
     <!-- Include the top bar -->
-    <div class="include topbar navbar" src="../include/topbar.html" data-prefix="../"></div>
+    <!-- <div class="include topbar nav" src="../@include/topbar.html" data-prefix="../"></div> -->
+    <header class="nav include" data-prefix="../" src="../@include/header.html"></header>
+    <aside class="sidebar nav include" data-prefix="../" src="../@include/aside.html"></aside>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const sidebar = document.querySelector('.sidebar');
+
+            mobileMenu.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+
+            // Close sidebar when clicking outside of it (optional)
+            document.addEventListener('click', function(e) {
+                if (!sidebar.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+    </script>
 
     <!-- Main content area -->
     <div class = "content">

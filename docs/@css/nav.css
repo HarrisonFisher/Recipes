@@ -1,0 +1,151 @@
+/* Header styles */
+header {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: #fff;
+    z-index: 1000; /* Ensure the header is above other content */
+    padding: 10px 20px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styles */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px; /* Add margin to separate from mobile menu */
+}
+
+/* Navigation links styles */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links > li {
+    margin: 0 10px;
+}
+
+.nav-links > li > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin to separate from logo */
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide sidebar off-screen by default */
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    transition: left 0.3s ease;
+    z-index: 100; /* Ensure it's above other content */
+}
+
+.sidebar .sidebar-content {
+    height: 100%; /* Ensure sidebar content takes full height */
+    background-color: #333; /* Same background color as sidebar */
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-links li {
+    padding: 10px 20px;
+}
+
+.sidebar-links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Search bar styles */
+.search-bar {
+    display: flex;
+    margin-left: auto; /* Aligns search bar to the right */
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-bar button:hover {
+    background-color: #777;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex; /* Make sure it's displayed */
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Hide sidebar off-screen by default */
+        height: 100%;
+        width: 250px;
+        background-color: #777;
+        padding-top: 60px; /* Adjust as needed */
+        transition: left 0.3s ease;
+    }
+
+    .sidebar .sidebar-content {
+        background-color: #333; /* Same background color as sidebar */
+    }
+
+    .sidebar.active {
+        left: 0; /* Show sidebar when active */
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .sidebar {
+        left: -250px; /* Hide sidebar off-screen */
+    }
+}
