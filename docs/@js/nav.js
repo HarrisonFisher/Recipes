@@ -2,9 +2,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Ensure content is fully injected before initializing navigation
     new HtmlInjector().init().then(() => {
+
         const containers = document.querySelectorAll('.nav');
-        
+
         const updateLinks = (container) => {
+            console.log(container);
             const prefix = container.getAttribute('data-prefix');
             const links = container.querySelectorAll('.nav-link');
             
@@ -17,6 +19,18 @@ document.addEventListener("DOMContentLoaded", function() {
         // Initial update for all containers
         containers.forEach(container => {
             updateLinks(container);
+
+            // Create a MutationObserver to watch for changes in the container
+            const observer = new MutationObserver((mutationsList) => {
+                for (const mutation of mutationsList) {
+                    if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                        updateLinks(container);
+                    }
+                }
+            });
+
+            // Configure the observer to watch for child node additions
+            observer.observe(container, { childList: true, subtree: true });
         });
 
         // MutationObserver to watch for changes in the .nav elements
@@ -27,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
         });
+
 
         // Configure the observer to watch for attribute changes on .nav elements
         containers.forEach(container => {
