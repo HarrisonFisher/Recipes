@@ -1,55 +1,60 @@
 // @js/nav.js
 document.addEventListener("DOMContentLoaded", function() {
-    // Ensure content is fully injected before initializing navigation
+    // Function to get the relative path based on the depth of the current page
+    function getRelativePath() {
+        // Get the current path of the document (e.g., /about/index.html)
+        const currentPath = window.location.pathname;
+        
+        // Count the number of slashes to determine the depth
+        const depth = (currentPath.match(/\//g) || []).length;
+        
+        // Construct the relative prefix based on the depth
+        return '../'.repeat(depth);
+    }
+
     new HtmlInjector().init().then(() => {
+        const updateLink = (link) => {
+            const prefix = getRelativePath(); // Get the relative path dynamically
+            const suffix = link.getAttribute('data-suffix');
+            link.setAttribute('href', prefix + suffix);
+        };
 
-        const containers = document.querySelectorAll('.nav');
-
-        const updateLinks = (container) => {
-            console.log(container);
-            const prefix = container.getAttribute('data-prefix');
-            const links = container.querySelectorAll('.nav-link');
+        const observeLinks = () => {
+            const links = document.querySelectorAll('.nav-link');
             
             links.forEach(link => {
-                const suffix = link.getAttribute('data-suffix');
-                link.setAttribute('href', prefix + suffix);
+                if (!link.__observed) {
+                    updateLink(link);
+                    link.__observed = true;
+                }
+            });
+
+            // Create a MutationObserver to watch for changes in the document
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                        mutation.addedNodes.forEach(node => {
+                            if (node.nodeType === Node.ELEMENT_NODE && node.classList.contains('nav-link')) {
+                                updateLink(node);
+                            }
+                        });
+                    } else if (mutation.type === 'attributes' && mutation.attributeName === 'data-suffix') {
+                        updateLink(mutation.target);
+                    }
+                });
+            });
+
+            // Configure the observer to watch for changes in the document
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['data-suffix']
             });
         };
 
-        // Initial update for all containers
-        containers.forEach(container => {
-            updateLinks(container);
-
-            // Create a MutationObserver to watch for changes in the container
-            const observer = new MutationObserver((mutationsList) => {
-                for (const mutation of mutationsList) {
-                    if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                        updateLinks(container);
-                    }
-                }
-            });
-
-            // Configure the observer to watch for child node additions
-            observer.observe(container, { childList: true, subtree: true });
-        });
-
-        // MutationObserver to watch for changes in the .nav elements
-        const observer = new MutationObserver(mutations => {
-            mutations.forEach(mutation => {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'data-prefix') {
-                    updateLinks(mutation.target);
-                }
-            });
-        });
-
-
-        // Configure the observer to watch for attribute changes on .nav elements
-        containers.forEach(container => {
-            observer.observe(container, {
-                attributes: true,
-                attributeFilter: ['data-prefix']
-            });
-        });
+        // Initial observation
+        observeLinks();
 
         // Mobile menu toggle
         const mobileMenu = document.querySelector('.mobile-menu');

@@ -171,3 +171,13 @@ table.rounded:not(:has(tfoot)) tbody:last-child tr:last-child :nth-child(1) {
 table.rounded:not(:has(tfoot)) tbody:last-child tr:last-child :nth-last-child(1) {
     border-bottom-right-radius: calc( var(--border-radius) - var(--border-width) );
 }
+
+
+/* table {
+    width: 100%;
+}
+
+table th, table td {
+    padding: 8px;
+    text-align: left;
+} */

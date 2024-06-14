@@ -19,8 +19,8 @@
 }
 
 .breadcrumb span {
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
+    margin: 0;
+    padding: 0;
 }
 
 .breadcrumb span:not(:last-child)::after {

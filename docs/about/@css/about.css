@@ -1,3 +1,13 @@
 .content {
     text-align: initial;
 }
+
+
+table {
+    width: 100%;
+}
+
+table th, table td {
+    padding: 8px;
+    text-align: left;
+}
