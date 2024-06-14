@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const depth = (currentPath.match(/\//g) || []).length;
         
         // Construct the relative prefix based on the depth
-        return '../'.repeat(depth);
+        return '../'.repeat(depth-1);
     }
 
     new HtmlInjector().init().then(() => {
