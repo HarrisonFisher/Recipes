@@ -6,14 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentPath = window.location.pathname;
         
         // Count the number of slashes to determine the depth
-        console.log((currentPath.match(/\//g) || []).length);
-        const depth = (currentPath.match(/\//g) || []).length - 1;
-        console.log("depth",depth)
+        const depth = (currentPath.match(/\//g) || []).length - 2;
         // Construct the relative prefix based on the depth
         return '../'.repeat(depth);
     }
-
-    console.log("getRelativePath()", getRelativePath());
 
     new HtmlInjector().init().then(() => {
         const updateLink = (link) => {
@@ -77,7 +73,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    console.log("window.location.pathname", window.location.pathname);
-
-    console.log("TEST2",'../'.repeat(0))
 });
