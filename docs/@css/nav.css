@@ -20,7 +20,7 @@ header {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-left: 10px; /* Add margin to separate from mobile menu */
+    margin-left: 10px; /* Add margin to separate from hamburger menu */
 }
 
 /* Navigation links styles */
@@ -41,8 +41,8 @@ header {
     font-weight: bold;
 }
 
-/* Mobile menu styles */
-.mobile-menu {
+/* hamburger menu styles */
+.hamburger-menu {
     display: none;
     flex-direction: column;
     cursor: pointer;
@@ -118,11 +118,11 @@ header {
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
-    header.nav-links {
+    .nav-links {
         display: none;
     }
-
-    .mobile-menu {
+    
+    .hamburger-menu {
         display: flex; /* Make sure it's displayed */
     }
 

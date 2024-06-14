@@ -9,15 +9,14 @@
         var version = new Date().getTime();
         
         document.write('<link rel="stylesheet" href="'+ '../@css/styles.css'     + '?v=' + version + '">');
-        document.write('<link rel="stylesheet" href="'+ '../@css/topbar.css'     + '?v=' + version + '">');
+        // document.write('<link rel="stylesheet" href="'+ '../@css/topbar.css'     + '?v=' + version + '">');
         document.write('<link rel="stylesheet" href="'+ '../@css/breadcrumb.css' + '?v=' + version + '">');
         document.write('<link rel="stylesheet" href="'+ '../@css/nav.css'        + '?v=' + version + '">');
         document.write('<link rel="stylesheet" href="'+ '@css/grid-container.css'+ '?v=' + version + '">');
         document.write('<link rel="stylesheet" href="'+ '@css/cell.css'          + '?v=' + version + '">');
 
-        document.write('<script src="'+ '../@js/include.js'                 + '?v=' + version + '"><\/script>');
+        // document.write('<script src="'+ '../@js/include.js'                 + '?v=' + version + '"><\/script>');
         document.write('<script src="'+ '../@js/nav.js'                     + '?v=' + version + '"><\/script>');
-
         document.write('<script src="'+ '../@js/breadcrumbs.js'             + '?v=' + version + '"><\/script>');
         document.write('<script src="'+ '../@js/data.js'                    + '?v=' + version + '"><\/script>');
         document.write('<script src="'+ '@js/categories.js'                 + '?v=' + version + '"><\/script>');
@@ -27,12 +26,36 @@
 </head>
 <body>
 
-
-    <!-- Include the top bar -->
-    <!-- <div class="include topbar" src="../@include/topbar.html"></div> -->
-    <script>const data_prefix = "../"</script>
-    <header class="include" src="../@include/header.html"></header>
-    <aside class="sidebar include" src="../@include/aside.html"></aside>
+    <script>const data_prefix = "../";</script>
+    
+    <header>
+        <div class="container">
+            <!-- <div class="logo">Logo</div> -->
+            <div class="hamburger-menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a class="nav-link" data-suffix="">Home</a></li>
+                    <li><a class="nav-link" data-suffix="categories">Categories</a></li>
+                    <li><a class="nav-link" data-suffix="about">About</a></li>
+                </ul>
+            </nav>
+            <form class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <aside class="sidebar navlinks">
+        <ul class="sidebar-links">
+            <li><a class="nav-link" data-suffix="">Home</a></li>
+            <li><a class="nav-link" data-suffix="categories">Categories</a></li>
+            <li><a class="nav-link" data-suffix="about">About</a></li>
+        </ul>
+    </aside>
 
     <!-- Main content area -->
     <div class = "content">
