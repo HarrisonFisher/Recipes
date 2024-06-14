@@ -1,19 +1,9 @@
 // @js/nav.js
 document.addEventListener("DOMContentLoaded", function() {
-    // Function to get the relative path based on the depth of the current page
-    function getRelativePath() {
-        // Get the current path of the document (e.g., /about/index.html)
-        const currentPath = window.location.pathname;
-        
-        // Count the number of slashes to determine the depth
-        const depth = (currentPath.match(/\//g) || []).length - 2;
-        // Construct the relative prefix based on the depth
-        return '../'.repeat(depth);
-    }
 
     new HtmlInjector().init().then(() => {
         const updateLink = (link) => {
-            const prefix = getRelativePath(); // Get the relative path dynamically
+            const prefix = typeof data_prefix !== 'undefined' && data_prefix !== null ? data_prefix : "";
             const suffix = link.getAttribute('data-suffix');
             link.setAttribute('href', prefix + suffix);
         };

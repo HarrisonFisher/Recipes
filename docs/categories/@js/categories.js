@@ -200,54 +200,25 @@ function display(categoriesToDisplay, recipesToDisplay,paths) {
     });
 }
 
-
-
-
-
-
-
-
-
-function createBreadcrumbLink(name, url, isLast) {
-    const span = document.createElement('span');
-    if (isLast) {
-        span.textContent = name;
-    } else {
-        const link = document.createElement('a');
-        link.textContent = name;
-        link.href = url;
-        span.appendChild(link);
-    }
-    return span;
-}
-
-
 function createBreadcrumbs(categoryPath) {
-    const breadcrumbContainer = document.getElementById('breadcrumbs');
-    breadcrumbContainer.innerHTML = ''; // Clear any existing breadcrumbs
-
     // Add "Home" link
-    const homeLink = createBreadcrumbLink('Home', '../', false);
-    breadcrumbContainer.appendChild(homeLink);
+    insertBreadcrumb('Home', '../', false);
 
     // Add "Categories" link or text
     const isLast = categoryPath.length === 0;
-    const categoriesLink = createBreadcrumbLink('Categories', '../categories', isLast);
-    breadcrumbContainer.appendChild(categoriesLink);
+    insertBreadcrumb('Categories', '../categories', isLast);
 
     // Add links for each category in the path
     let accumulatedPath = '';
     categoryPath.forEach((category, index) => {
         accumulatedPath += `category=${encodeURIComponent(category)}`;
         const isLast = index === categoryPath.length - 1;
-        const link = createBreadcrumbLink(category, `../categories?${accumulatedPath}`, isLast);
-        breadcrumbContainer.appendChild(link);
+        insertBreadcrumb(category, `../categories?${accumulatedPath}`, isLast);
         if (!isLast) {
             accumulatedPath += '&';
         }
     });
 }
-
 
 window.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);

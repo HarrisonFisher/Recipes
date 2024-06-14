@@ -128,39 +128,21 @@ async function renderRecipe(recipeName, containerId) {
     }
 }
 
-function createBreadcrumbLink(name, url, isLast) {
-    const span = document.createElement('span');
-    if (isLast) {
-        span.textContent = name;
-    } else {
-        const link = document.createElement('a');
-        link.textContent = name;
-        link.href = url;
-        span.appendChild(link);
-    }
-    return span;
-}
 
 function createBreadcrumbs(categoryPath, recipeName) {
-    const breadcrumbContainer = document.getElementById('breadcrumbs');
-    breadcrumbContainer.innerHTML = ''; // Clear any existing breadcrumbs
-
     // Add "Home" link
-    const homeLink = createBreadcrumbLink('Home', '../', false);
-    breadcrumbContainer.appendChild(homeLink);
+    insertBreadcrumb('Home', '../', false);
 
     if (categoryPath) {
         // Add "Categories" link
-        const categoriesLink = createBreadcrumbLink('Categories', '../categories', false);
-        breadcrumbContainer.appendChild(categoriesLink);
+        insertBreadcrumb('Categories', '../categories', false);
 
         // Add links for each category in the path
         let accumulatedPath = '';
         categoryPath.forEach((category, index) => {
             accumulatedPath += `category=${encodeURIComponent(category)}`;
             const isLast = index === categoryPath.length - 1;
-            const link = createBreadcrumbLink(category, `../categories?${accumulatedPath}`, isLast && !recipeName);
-            breadcrumbContainer.appendChild(link);
+            insertBreadcrumb(category, `../categories?${accumulatedPath}`, isLast && !recipeName);
             if (!isLast) {
                 accumulatedPath += '&';
             }
@@ -169,8 +151,7 @@ function createBreadcrumbs(categoryPath, recipeName) {
 
     // Add recipe name as the last breadcrumb
     if (recipeName) {
-        const recipeBreadcrumb = createBreadcrumbLink(recipeName, '', true);
-        breadcrumbContainer.appendChild(recipeBreadcrumb);
+        insertBreadcrumb(recipeName, '', true);
     }
 }
 

@@ -15,9 +15,11 @@
         document.write('<link rel="stylesheet" href="'+ '../@css/nav.css'            + '?v=' + version + '">');
         document.write('<link rel="stylesheet" href="'+ '@css/about.css'             + '?v=' + version + '">');
 
-        document.write('<script src="'+ '../@js/include.js'                          + '?v=' + version + '"><\/script>');
-        document.write('<script src="'+ '../@js/nav.js'                              + '?v=' + version + '"><\/script>');
-        document.write('<script src="'+ '@js/about.js'                               + '?v=' + version + '"><\/script>');
+        document.write('<script src="'+ '../@js/include.js'                         + '?v=' + version + '"><\/script>');
+        document.write('<script src="'+ '../@js/nav.js'                             + '?v=' + version + '"><\/script>');
+        document.write('<script src="'+ '../@js/breadcrumbs.js'                     + '?v=' + version + '"><\/script>');
+        document.write('<script src="'+ '@js/about.js'                              + '?v=' + version + '"><\/script>');
+
 
     </script>
 
@@ -29,6 +31,7 @@
 
     <!-- Include the top bar -->
     <!-- <div class="include topbar" src="../@include/topbar.html"></div> -->
+    <script>const data_prefix = "../"</script>
     <header class="include" src="../@include/header.html"></header>
     <aside class="sidebar include" src="../@include/aside.html"></aside>
 
