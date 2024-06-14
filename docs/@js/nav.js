@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
         return '../'.repeat(depth-1);
     }
 
+    console.log("getRelativePath()", getRelativePath());
+
     new HtmlInjector().init().then(() => {
         const updateLink = (link) => {
             const prefix = getRelativePath(); // Get the relative path dynamically
