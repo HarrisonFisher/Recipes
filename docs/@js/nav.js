@@ -73,4 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     });
+
+    console.log("window.location.pathname", window.location.pathname);
 });
