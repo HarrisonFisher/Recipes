@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentPath = window.location.pathname;
         
         // Count the number of slashes to determine the depth
+        console.log((currentPath.match(/\//g) || []).length);
         const depth = (currentPath.match(/\//g) || []).length - 1;
         console.log("depth",depth)
         // Construct the relative prefix based on the depth
