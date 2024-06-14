@@ -1,32 +1,3 @@
-async function fetchAllJsonFiles() {
-    const response = await fetch(`../@data/index.json?nocache=${new Date().getTime()}`);
-    const { files } = await response.json();
-    const fetchPromises = files.map(fileName => fetch(`../@data/${fileName}?nocache=${new Date().getTime()}`).then(res => res.json()));
-    return Promise.all(fetchPromises);
-}
-
-async function fetchAllRecipes() {
-    const jsonFiles = await fetchAllJsonFiles();
-    let allRecipes = [];
-    jsonFiles.forEach(data => {
-        if (data.recipes) {
-            allRecipes = allRecipes.concat(data.recipes);
-        }
-    });
-    return allRecipes;
-}
-
-async function fetchRecipe(recipeName) {
-    try {
-        const allRecipes = await fetchAllRecipes();
-        const recipe = allRecipes.find(r => r.name === recipeName);
-        return recipe;
-    } catch (error) {
-        console.error('Error fetching recipe:', error);
-        return null;
-    }
-}
-
 function toFraction(amount) {
     const fractionChars = {
         '1/4': '¼',

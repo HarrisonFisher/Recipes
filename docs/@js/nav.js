@@ -9,15 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         const observeLinks = () => {
-            const links = document.querySelectorAll('.nav-link');
-            
-            links.forEach(link => {
-                if (!link.__observed) {
-                    updateLink(link);
-                    link.__observed = true;
-                }
-            });
-
             // Create a MutationObserver to watch for changes in the document
             const observer = new MutationObserver(mutations => {
                 mutations.forEach(mutation => {
@@ -39,6 +30,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 subtree: true,
                 attributes: true,
                 attributeFilter: ['data-suffix']
+            });
+
+            const links = document.querySelectorAll('.nav-link');
+            
+            links.forEach(link => {
+                if (!link.__observed) {
+                    updateLink(link);
+                    link.__observed = true;
+                }
             });
         };
 
