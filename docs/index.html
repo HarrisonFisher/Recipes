@@ -12,10 +12,13 @@
         document.write('<link rel="stylesheet" href="'+ '@css/styles.css'    + '?v=' + version + '">');
         document.write('<link rel="stylesheet" href="'+ '@css/topbar.css'    + '?v=' + version + '">');
         document.write('<link rel="stylesheet" href="'+ '@css/nav.css'       + '?v=' + version + '">');
+        document.write('<link rel="stylesheet" href="'+ '@css/breadcrumb.css'     + '?v=' + version + '">');
+
 
         document.write('<script src="'+ '@js/include.js'                     + '?v=' + version + '"><\/script>');
         document.write('<script src="'+ '@js/nav.js'                         + '?v=' + version + '"><\/script>');
-            
+        document.write('<script src="'+ '@js/breadcrumbs.js'                      + '?v=' + version + '"><\/script>');
+
     </script>
 
 </head>
@@ -24,11 +27,12 @@
     <!-- Include the top bar -->    
     <!-- <div class="include topbar" src="@include/topbar.html"></div> -->
     <header class="include" src="@include/header.html"></header>
-    <aside class="sidebar include" src="@include/aside.html"></aside>
+    <aside class="sidebar include navlinks" src="@include/aside.html"></aside>
 
     <!-- Main content area -->
     <div class="content">
-        <h3>&#x200B;</h3>
+        <!-- <h3>&#x200B;</h3> -->
+        <ul id="breadcrumbs" class="breadcrumb" aria-label="breadcrumb"></ul>
         <h1>Some of my favorite recipes</h1>
         <img class="recipe-image" src="@img/Book.jpg" alt="Favorite Recipes">
     </div>

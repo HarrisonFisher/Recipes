@@ -1,21 +1,21 @@
-.breadcrumb {
-    font-size: 1.2em; /* Make the text larger */
+/* .breadcrumb {
+    font-size: 1.2em;
     display: flex;
-    justify-content: center; /* Center the breadcrumb items */
-    align-items: center; /* Vertically center the breadcrumb items */
-    text-align: center; /* Center the content */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 }
 
 
 .breadcrumb a {
-    text-decoration: underline; /* Add underline by default */
-    color: inherit; /* Inherit color from parent, so links have the same color as text */
+    text-decoration: underline;
+    color: inherit;
 
 }
 
 .breadcrumb a:hover {
-    text-decoration: none; /* Remove underline on hover */
+    text-decoration: none;
 }
 
 .breadcrumb span {
@@ -24,7 +24,52 @@
 }
 
 .breadcrumb span:not(:last-child)::after {
-    content: ' » '; /* Adjusted to include spaces */
-    white-space: pre; /* Preserve spaces */
+    content: ' » ';
+    white-space: pre;
+}
+ */
+
+
+
+#breadcrumbs {
+    min-height: 40px; /* Adjust height as needed */
 }
 
+.breadcrumb {
+    text-align: center;
+}
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    /* background-color: #eee; */
+}
+  
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 24px;
+}
+  
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    /* content: "/\00a0"; */
+    content: "»";
+}
+  
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    /* color: #0275d8; */
+    color: inherit;
+    text-decoration: underline;
+    font-size: 24px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
+}
+  
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: none;
+}

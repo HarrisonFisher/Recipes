@@ -38,6 +38,7 @@ header {
 .nav-links > li > a {
     text-decoration: none;
     color: #fff;
+    font-weight: bold;
 }
 
 /* Mobile menu styles */
@@ -108,6 +109,7 @@ header {
     border-radius: 0 4px 4px 0;
     cursor: pointer;
     outline: none;
+    font-weight: bold;
 }
 
 .search-bar button:hover {
@@ -116,7 +118,7 @@ header {
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
-    .nav-links {
+    header.nav-links {
         display: none;
     }
 

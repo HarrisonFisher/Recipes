@@ -26,11 +26,16 @@ main {
 
 .content {
     text-align: center;
-    margin: 0 20px;
+    margin: 24px 24px;
+}
+
+.content > :first-child {
+    margin-top: 0px; 
 }
 
 .content > * {
-    margin-bottom: 0; /* Add bottom margin between every child element 20*/
+    /* margin-top: 0px;  */
+    /* Add bottom margin between every child element 20*/
     /* padding: 5px;  */
     /* Add padding to all direct children of .content  5*/ 
 }

@@ -1,7 +1,7 @@
 // breadcrumbs.js
 
 function createBreadcrumbLink (name, url, isLast) {
-    const span = document.createElement('span');
+    const span = document.createElement('li');
     if (isLast) {
         span.textContent = name;
     } else {
