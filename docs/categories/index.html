@@ -22,7 +22,6 @@
         document.write('<script src="'+ '../@js/data.js'                    + '?v=' + version + '"><\/script>');
         document.write('<script src="'+ '@js/categories.js'                 + '?v=' + version + '"><\/script>');
 
-
     </script>
     
 </head>
@@ -34,24 +33,6 @@
     <script>const data_prefix = "../"</script>
     <header class="include" src="../@include/header.html"></header>
     <aside class="sidebar include" src="../@include/aside.html"></aside>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const sidebar = document.querySelector('.sidebar');
-
-            mobileMenu.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
-
-            // Close sidebar when clicking outside of it (optional)
-            document.addEventListener('click', function(e) {
-                if (!sidebar.contains(e.target) && !mobileMenu.contains(e.target)) {
-                    sidebar.classList.remove('active');
-                }
-            });
-        });
-    </script>
 
     <!-- Main content area -->
     <div class = "content">

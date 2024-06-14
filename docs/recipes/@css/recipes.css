@@ -1,3 +1,23 @@
 .content {
     text-align: initial;
 }
+
+.hidden {
+    display: none;
+}
+
+#recipe-warning {
+    color: red;
+}
+
+#recipe-directions .step-container {
+    margin-bottom: 1em; /* Adjust as necessary */
+}
+
+#recipe-directions .step-number {
+    font-weight: bold;
+}
+
+#recipe-directions .step-text {
+    display: inline; /* Ensures text flows nicely with the step number */
+}

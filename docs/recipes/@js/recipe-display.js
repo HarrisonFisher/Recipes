@@ -68,12 +68,31 @@ async function renderRecipe(recipeName, containerId) {
             `;
         });
 
-        const directionsList = document.getElementById('recipe-directions');
-        recipe.directions.forEach(step => {
-            const listItem = document.createElement('li');
-            listItem.textContent = step;
-            directionsList.appendChild(listItem);
+        // const directionsList = document.getElementById('recipe-directions');
+        // recipe.directions.forEach(step => {
+        //     const listItem = document.createElement('li');
+        //     listItem.textContent = step;
+        //     directionsList.appendChild(listItem);
+        // });
+        const directionsContainer = document.getElementById('recipe-directions');
+        directionsContainer.innerHTML = ''; // Clear previous directions
+        recipe.directions.forEach((step, index) => {
+            const stepContainer = document.createElement('div');
+            stepContainer.classList.add('step-container');
+
+            const stepNumber = document.createElement('h3');
+            stepNumber.classList.add('step-number');
+            stepNumber.textContent = `Step ${index + 1}:`;
+
+            const stepText = document.createElement('span');
+            stepText.classList.add('step-text');
+            stepText.textContent = ` ${step}`;
+
+            stepContainer.appendChild(stepNumber);
+            stepContainer.appendChild(stepText);
+            directionsContainer.appendChild(stepContainer);
         });
+
 
         const default_thumbnail = '../@img/default-thumbnail.jpg';
         function getEmojiImageUrl(emojiCode) {
@@ -136,13 +155,27 @@ function updateFractionText() {
             const originalAmount = parseFloat(dataAmount);
             const currentServings = parseFloat(document.getElementById('recipe-servings').value);
             const originalServings = parseFloat(document.getElementById('recipe-servings').getAttribute('data-servings'));
-            
+            const minServings = parseFloat(document.getElementById('recipe-servings').min);
+
             const adjustedAmount = (originalAmount / originalServings) * currentServings;
-            
+
             element.textContent = toFraction(adjustedAmount);
         }
     });
+
+    // Toggle visibility of recipe warning based on servings
+    const recipeWarning = document.getElementById('recipe-warning');
+    const currentServings = parseFloat(document.getElementById('recipe-servings').value);
+    const minServings = parseFloat(document.getElementById('recipe-servings').min);
+
+    if (currentServings !== minServings) {
+        recipeWarning.classList.remove('hidden');
+    } else {
+        recipeWarning.classList.add('hidden');
+        recipeWarning.innerHTML = "<strong>Adjusted Cooking Time:</strong> If you change the amount of ingredients, adjust the baking time accordingly to ensure proper cooking.";
+    }
 }
+
 
 
 

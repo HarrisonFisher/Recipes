@@ -9,6 +9,7 @@
 
     <script>
         var version = new Date().getTime();
+
         document.write('<link rel="stylesheet" href="'+ '../@css/styles.css'         + '?v=' + version + '">');
         document.write('<link rel="stylesheet" href="'+ '../@css/topbar.css'         + '?v=' + version + '">');
         document.write('<link rel="stylesheet" href="'+ '../@css/rounded.css'        + '?v=' + version + '">');
@@ -29,12 +30,13 @@
 
     <!-- Include the top bar -->
     <!-- <div class="include topbar" src="../@include/topbar.html"></div> -->
-    <script>const data_prefix = "../"</script>
+    <script> const data_prefix = "../"; </script>
     <header class="include" src="../@include/header.html"></header>
     <aside class="sidebar include" src="../@include/aside.html"></aside>
 
     <!-- Main content area -->
     <div class="content" id="content">
+        <
         <h3 id="breadcrumbs" class="breadcrumb" aria-label="breadcrumb"></h3>
         <h1 id="recipe-name"></h1>
         <p id="recipe-description"></p>
@@ -54,9 +56,10 @@
             </tbody>
         </table>
         <h2>Directions</h2>
-        <ol id="recipe-directions">
+        <h3 class="hidden" id="recipe-warning"></h3>
+        <div id="recipe-directions">
             <!-- Directions will be filled dynamically here -->
-        </ol>
+        </div>
     </div>
 
 </body>
